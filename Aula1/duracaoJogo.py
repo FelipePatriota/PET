@@ -1,6 +1,6 @@
 #Leia a hora inicial, minuto inicial, hora final e minuto final de
 #um jogo. A seguir calcule a duração do jogo.
-#Obs: O jogo tem duração mínima de um (1) minuto e duração máxima de 24 horas.
+#Obs: O jogo tem duração mínima de um (1) minuto e duração máxima de 24 horas. 
 
 horaInicial = int ( input ( "Digite a hora inicial: " ) ) #leia a hora inicial
 minutoInicial = int ( input ( "Digite o minuto inicial: " ) ) #leia o minuto inicial

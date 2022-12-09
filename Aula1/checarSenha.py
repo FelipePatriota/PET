@@ -3,7 +3,7 @@
 #informada, escrever a mensagem "Senha incorreta. Tente
 #novamente". Quando a senha for informada corretamente deve ser
 #impressa a mensagem "Acesso permitido" e o algoritmo encerrado.
-#Considere que a senha correta é o valor 2022.
+#Considere que a senha correta é o valor 2022. 
 
 senhaSalva = 2022 #senha correta
 senhaInserida = '' #senha inserida pelo usuário

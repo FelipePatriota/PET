@@ -2,7 +2,7 @@
 #dados, contendo cada um, a idade de um indivíduo. O último
 #dados, que não entrará nos cálculos, contém um valor de idade
 #negativa. Calcular e imprimir a idade média deste grupo de
-#indivíduos. 
+#indivíduos.  
 
 idade = 0 #idade do indivíduo
 somaIdade = 0 #soma das idades
