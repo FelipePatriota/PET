@@ -33,14 +33,14 @@ while escolha > 0: # enquanto a escolha for diferente de 0
             numConta = bancoUfrpe.criarContaBonificada() # cria uma conta bonificada   
         print("Conta criada:", numConta)
 
-    # consultar saldo da conta 
+    # pergunta o numero da conta e consultar o saldo da conta 
     elif escolha == 2:
         print("Consultando Saldo...")
         numConta = int(input("digite o numero da conta:"))
         saldo = bancoUfrpe.consultaSaldo(numConta)
         print("o saldo da conta", numConta, "é R$", saldo)
 
-    # depositar na conta com desconto
+    # Pergunta o numero da conta e depositar na conta
     elif escolha == 3:
         print("Depositando Conta...")
         numConta = int(input("digite o numero da conta:"))
@@ -48,7 +48,7 @@ while escolha > 0: # enquanto a escolha for diferente de 0
         saldo = bancoUfrpe.depositarComDesconto(numConta, valor)
         print("Valor Depositado")
 
-    # sacar de qualquer conta 
+    # Pergunta o numero da conta e sacar da conta 
     elif escolha == 4:
         print("Sacando da Conta...")
         numConta = int(input("digite o numero da conta:"))
@@ -59,7 +59,8 @@ while escolha > 0: # enquanto a escolha for diferente de 0
         else:
             print("Saldo Insuficiente")
 
-    # render poupanca da conta poupanca           
+    # pergunta o numero da conta e render poupanca 
+    # se tiver poupanca mostra o novo saldo         
     elif escolha == 5:
         print("Rendendo Poupanca...")
         numConta = int(input("digite o numero da conta poupanca:"))
@@ -69,7 +70,7 @@ while escolha > 0: # enquanto a escolha for diferente de 0
         else:
             print("A conta não é poupanca ou não existe")
 
-    # render bonus da conta bonificada se tiver bonus          
+    # Rende bonus da conta bonificada se tiver bonus          
     elif escolha == 6:
         print("Será que vai dar bonus?")
         numConta = int(input("digite o numero da conta bonificada:"))
