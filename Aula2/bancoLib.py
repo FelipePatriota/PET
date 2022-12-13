@@ -24,7 +24,7 @@ class Conta():
 # Classe Conta Bonificada 
 class contaBonificada(Conta):
 
-    # Construtor da classe Conta Bonificada
+    # "Construtor" da classe Conta Bonificada
     def __init__(self, numConta):
         super().__init__(numConta)
         self.bonus = 0  
@@ -42,14 +42,14 @@ class contaBonificada(Conta):
 # Classe Poupança  
 class Poupanca(Conta):
 
-    # Construtor da classe Poupança
+    # metodo render, rende o saldo com 0.01% de juros 
     def render(self):
         self.saldo = self.saldo + self.saldo*0.01
 
 # Classe Banco 
 class Banco():
 
-    # Construtor da classe Banco
+    # "Construtor" da classe Banco
     def __init__(self, nome):
         self.nome = nome
         self.contas = []
@@ -58,14 +58,16 @@ class Banco():
     def getNome(self):
         return self.nome
 
-    # método criarConta gerar um número aleatório entre 0 e 1000, que será o número da conta
+    # método criarConta gerar um número aleatório 
+    # entre 0 e 1000, que será o número da conta
     def criarConta(self):
         num = random.randint(0, 1000)
         c = Conta(num)
         self.contas.append(c)
         return num
 
-    # método criarContaBonificada, gerar um número aleatório entre 0 e 1000, que será o número da conta bonificada
+    # método criarContaBonificada, gerar um número aleatório 
+    # entre 0 e 1000, que será o número da conta bonificada
     def criarContaBonificada(self):
         num = random.randint(0, 1000)
         a = contaBonificada(num)
@@ -86,7 +88,8 @@ class Banco():
                 return conta.saldo
         return -1
 
-    # método depositar
+    # método depositar nele é verificado se a conta existe 
+    # e se é uma conta bonificada se for deposita com bonus
     def depositarComDesconto(self, numConta, valor):
         for conta in self.contas:
             if conta.numero == numConta and isinstance(conta, contaBonificada):
@@ -98,14 +101,16 @@ class Banco():
                 return True   
         return False      
 
-    # método sacar
+    # método sacar nele é verificado se a conta existe 
+    # e se o saldo é maior que o valor de entrada
     def sacar(self, numConta, valor):
         for conta in self.contas:
             if conta.numero == numConta:
                 return conta.sacar(valor)
         return False
 
-    # método renderPoupanca    
+    # método renderPoupanca nele é verificado 
+    # se a conta existe e se é uma conta poupança  
     def renderPoupanca(self, numConta):
         for i in self.contas:
             if i.numero == numConta and isinstance(i, Poupanca):
@@ -113,7 +118,8 @@ class Banco():
                 return True
         return False
 
-    # método renderBonus
+    # método renderBonus nele é verificado 
+    # se a conta existe e se é uma conta bonificada
     def renderBonus(self, numConta):
         for i in self.contas:
             if i.numero == numConta and isinstance(i, contaBonificada):
