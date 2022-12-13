@@ -29,7 +29,8 @@ class contaBonificada(Conta):
         super().__init__(numConta)
         self.bonus = 0
 
-    # Método deposite com desconto e bonus de 0.1% e 0.01% respectivamente
+    # método deposita com bonus, deposita o valor de entrada 
+    # com 0.1% de desconto e acumula 0.01% de bonus
     def depositaComBonus(self, valor):
         self.saldo = (self.saldo + valor) - (valor*0.1)/100
         self.bonus += (valor*0.01)/100
