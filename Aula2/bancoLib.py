@@ -3,7 +3,7 @@ import random
 # Classe Conta
 class Conta():
 
-    # Construtor da classe Conta
+    # "Construtor" da classe Conta
     def __init__(self, numConta):
         self.numero = numConta
         self.saldo = 0
@@ -27,11 +27,12 @@ class contaBonificada(Conta):
     # "Construtor" da classe Conta Bonificada
     def __init__(self, numConta):
         super().__init__(numConta)
-        self.bonus = 0  
+        self.bonus = 0
 
     # Método deposite com desconto e bonus de 0.1% e 0.01% respectivamente
     def depositaComBonus(self, valor):
         self.saldo = (self.saldo + valor) - (valor*0.1)/100
+        self.bonus = self.bonus + (valor*0.01)/100
         self.bonus += (valor*0.01)/100
 
     # Método render bonus se o saldo for maior que o valor de entrada
