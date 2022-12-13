@@ -32,7 +32,6 @@ class contaBonificada(Conta):
     # Método deposite com desconto e bonus de 0.1% e 0.01% respectivamente
     def depositaComBonus(self, valor):
         self.saldo = (self.saldo + valor) - (valor*0.1)/100
-        self.bonus = self.bonus + (valor*0.01)/100
         self.bonus += (valor*0.01)/100
 
     # Método render bonus se o saldo for maior que o valor de entrada
