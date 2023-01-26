@@ -52,3 +52,16 @@ class Banco():
             return saldo[0]
         else:
             return -1
+            
+    def sacar(self, numConta, valor):
+        # a linha abaixo consulta o saldo de uma conta no banco de dados
+        self.cursor.execute("SELECT SALDO FROM CONTAS WHERE NUM = %s", (numConta,))
+        # a linha abaixo recupera o saldo da conta
+        saldo = self.cursor.fetchone()
+        if saldo and saldo[0] >= valor:
+            # a linha abaixo atualiza o saldo de uma conta no banco de dados
+            self.cursor.execute("UPDATE CONTAS SET SALDO = SALDO - %s WHERE NUM = %s", (valor, numConta))
+            self.con.commit()
+            return True
+        else:
+            return False            
