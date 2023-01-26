@@ -52,7 +52,7 @@ class Banco():
             return saldo[0]
         else:
             return -1
-            
+
     def sacar(self, numConta, valor):
         # a linha abaixo consulta o saldo de uma conta no banco de dados
         self.cursor.execute("SELECT SALDO FROM CONTAS WHERE NUM = %s", (numConta,))
@@ -64,4 +64,9 @@ class Banco():
             self.con.commit()
             return True
         else:
-            return False            
+            return False         
+
+
+    def close(self):
+        # a linha abaixo fecha a conexão com o banco de dados
+        self.con.close()               
