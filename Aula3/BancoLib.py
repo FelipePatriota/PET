@@ -1,6 +1,18 @@
 import random
+import mysql.connector
 
+# Aluno: Felipe Patriota 
+# a linha abaixo cria uma conexão com o banco de dados 
+con = mysql.connector.connect(user='sql10593359',
+                              password='InzuW7Dv37',
+                              host='sql10.freemysqlhosting.net',
+                              port=3306,
+                              database='sql10593359')
 
+# a linha abaixo cria um cursor para executar comandos SQL
+cursor = con.cursor()
+
+# Criação da tabela Conta
 class Conta():
     def __init__(self, numConta):
         self.numero = numConta
