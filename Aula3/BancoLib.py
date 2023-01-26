@@ -32,33 +32,23 @@ class Banco():
         # a linha abaixo salva as alterações no banco de dados
         self.con.commit()
 
-
-class Banco():
-    def __init__(self, nome):
-        self.nome = nome
-        self.contas = []
-
     def getNome(self):
         return self.nome
 
     def criarConta(self):
         num = random.randint(0, 1000)
-        c = Conta(num)
-        self.contas.append(c)
+        # a linha abaixo insere uma nova conta no banco de dados
+        self.cursor.execute(f"INSERT INTO CONTAS (NUM, SALDO) VALUES ({num}, 0)")
+        # a linha abaixo salva as alterações no banco de dados
+        self.con.commit()
         return num
 
     def consultaSaldo(self, numConta):
-        for conta in self.contas:
-            if conta.numero == numConta:
-                return conta.saldo
-        return -1
-
-    def depositar(self, numConta, valor):
-        for conta in self.contas:
-            if conta.numero == numConta:
-                conta.deposite(valor)
-
-    def sacar(self, numConta, valor):
-        for conta in self.contas:
-            if conta.numero == numConta:
-                return conta.sacar(valor)
+        # a linha abaixo consulta o saldo de uma conta no banco de dados
+        self.cursor.execute(f"SELECT SALDO FROM CONTAS WHERE NUM = {numConta}")
+        # a linha abaixo recupera o saldo da conta
+        saldo = self.cursor.fetchone()
+        if saldo:
+            return saldo[0]
+        else:
+            return -1
