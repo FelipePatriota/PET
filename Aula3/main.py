@@ -1,6 +1,6 @@
 from BancoLib import Banco
 
-
+# iniciando Menu
 def imprimeMenu():
     print("Menu")
     print("0 - Sair")
@@ -9,11 +9,12 @@ def imprimeMenu():
     print("3 - Depositar na Conta")
     print("4 - Sacar na Conta")
 
-
+# iniciando o programa
 print("Bem-vindo")
 bancoUfrpe = Banco("UABJ")
 imprimeMenu()
 escolha = int(input("digite a opção desejada:"))
+# enquanto a escolha for diferente de 0, o programa continua
 while escolha > 0:
     if escolha == 1:
         # criar uma conta
