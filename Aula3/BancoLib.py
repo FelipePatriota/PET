@@ -32,6 +32,7 @@ class Banco():
         # a linha abaixo salva as alterações no banco de dados
         self.con.commit()
 
+
     def getNome(self):
         return self.nome
 
@@ -53,6 +54,14 @@ class Banco():
         else:
             return -1
 
+
+    def depositar(self, numConta, valor):
+        # a linha abaixo atualiza o saldo de uma conta no banco de dados
+        self.cursor.execute("UPDATE CONTAS SET SALDO = SALDO + %s WHERE NUM = %s", (valor, numConta))
+        # a linha abaixo salva as alterações no banco de dados
+        self.con.commit()
+  
+
     def sacar(self, numConta, valor):
         # a linha abaixo consulta o saldo de uma conta no banco de dados
         self.cursor.execute("SELECT SALDO FROM CONTAS WHERE NUM = %s", (numConta,))
@@ -64,9 +73,8 @@ class Banco():
             self.con.commit()
             return True
         else:
-            return False         
-
+            return False
 
     def close(self):
         # a linha abaixo fecha a conexão com o banco de dados
-        self.con.close()               
+        self.con.close()   
