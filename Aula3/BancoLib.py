@@ -14,19 +14,23 @@ cursor = con.cursor()
 
 # Criação da tabela Conta
 class Conta():
-    def __init__(self, numConta):
+    def __init__(self, numConta):        
         self.numero = numConta
         self.saldo = 0
 
-    def deposite(self, valor):
-        self.saldo = self.saldo + valor
+# Criação da tabela Banco
+class Banco():
 
-    def sacar(self, valor):
-        if self.saldo >= valor:
-            self.saldo = self.saldo - valor
-            return True
-        else:
-            return False
+    def __init__(self, nome):
+        
+        self.nome = nome
+        self.con = con
+        # a linha abaixo cria um cursor para executar comandos SQL
+        self.cursor = self.con.cursor()
+        # a linha abaixo cria a tabela Conta caso ela não exista
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS Conta (numero INT, saldo INT)''')
+        # a linha abaixo salva as alterações no banco de dados
+        self.con.commit()
 
 
 class Banco():
