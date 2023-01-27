@@ -57,19 +57,19 @@ class Banco():
 
     def depositar(self, numConta, valor):
         # a linha abaixo atualiza o saldo de uma conta no banco de dados
-        self.cursor.execute("UPDATE CONTAS SET SALDO = SALDO + %s WHERE NUM = %s", (valor, numConta))
+        self.cursor.execute(f"UPDATE CONTAS SET SALDO = SALDO + %s WHERE NUM = %s", (valor, numConta))
         # a linha abaixo salva as alterações no banco de dados
         self.con.commit()
   
 
     def sacar(self, numConta, valor):
         # a linha abaixo consulta o saldo de uma conta no banco de dados
-        self.cursor.execute("SELECT SALDO FROM CONTAS WHERE NUM = %s", (numConta,))
+        self.cursor.execute(f"SELECT SALDO FROM CONTAS WHERE NUM = %s", (numConta,))
         # a linha abaixo recupera o saldo da conta
         saldo = self.cursor.fetchone()
         if saldo and saldo[0] >= valor:
             # a linha abaixo atualiza o saldo de uma conta no banco de dados
-            self.cursor.execute("UPDATE CONTAS SET SALDO = SALDO - %s WHERE NUM = %s", (valor, numConta))
+            self.cursor.execute(f"UPDATE CONTAS SET SALDO = SALDO - %s WHERE NUM = %s", (valor, numConta))
             self.con.commit()
             return True
         else:
