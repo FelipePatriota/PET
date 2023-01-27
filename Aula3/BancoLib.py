@@ -78,5 +78,5 @@ class Banco():
     def close(self):
         # a linha abaixo fecha a conexão com o banco de dados
         self.con.close()   
-
+        # a linha abaixo fecha o cursor	
         self.cursor.close()
