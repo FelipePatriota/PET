@@ -68,7 +68,7 @@ class Banco():
         saldo = self.cursor.fetchone()
         if saldo and saldo[0] >= valor:
             # a linha abaixo atualiza o saldo de uma conta no banco de dados
-            self.cursor.execute("UPDATE CONTAS SET SALDO = SALDO - %s WHERE NUM = %s", (valor, numConta))
+            self.cursor.execute(f"UPDATE CONTAS SET SALDO = SALDO - %s WHERE NUM = %s", (valor, numConta))
             self.con.commit()
             return True
         else:
