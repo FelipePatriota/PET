@@ -12,7 +12,7 @@ class Conta():
     def depositeComDesconto(self, valor):
         self.saldo = self.saldo + valor - (valor*0.1)/100
 
-    # Método sacar valor da conta, se o saldo for maior que o valor de entrada 
+    # Método sacar valor da conta, se o saldo for maior que o valor de entrada  
     # faz a operação e retorna True, senão retorna False
     def sacar(self, valor):
         if self.saldo >= valor:
