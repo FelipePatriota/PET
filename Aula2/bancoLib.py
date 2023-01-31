@@ -8,7 +8,7 @@ class Conta():
         self.numero = numConta
         self.saldo = 0
 
-    # Métodos deposite com desconto de 0.1%, usando o valor de entrada
+    # Métodos deposite com desconto de 0.1%, usando o valor de entrada  
     def depositeComDesconto(self, valor):
         self.saldo = self.saldo + valor - (valor*0.1)/100
 
