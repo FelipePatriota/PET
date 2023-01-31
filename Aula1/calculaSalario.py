@@ -1,5 +1,5 @@
 #Faça uma função chamada calculaSalario que recebe como
-#parâmetro o valor do salário bruto calcula o salário líquido. O salário
+#parâmetro o valor do salário bruto calcula o salário líquido. O salário 
 #líquido é calculado a partir do salário bruto, primeiro descontando 11%
 #referente ao INSS, e do resultado, descontando-se 15% de imposto de
 #renda.  
