@@ -3,6 +3,7 @@
 #dados, que não entrará nos cálculos, contém um valor de idade
 #negativa. Calcular e imprimir a idade média deste grupo de
 #indivíduos.  
+#Aluno: Felipe Patriota
 
 idade = 0 #idade do indivíduo
 somaIdade = 0 #soma das idades
