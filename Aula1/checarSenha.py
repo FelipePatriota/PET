@@ -4,6 +4,7 @@
 #novamente". Quando a senha for informada corretamente deve ser
 #impressa a mensagem "Acesso permitido" e o algoritmo encerrado.
 #Considere que a senha correta é o valor 2022. 
+#Aluno: Felipe Patriota
 
 senhaSalva = 2022 #senha correta
 senhaInserida = '' #senha inserida pelo usuário

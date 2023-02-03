@@ -12,6 +12,7 @@
 #cálculo do valor a ser pago é feito da seguinte forma. Para pagamentos
 #sem atraso, cobrar o valor da prestação. Quando houver atraso, cobrar
 #3% de multa, mais 0,1% de juros por dia de atraso.
+#Aluno: Felipe Patriota
 
 def valorPagamento(valorPrestacao, diasAtraso): #função que calcula o valor a ser pago 
     valorPrestacao = valorPrestacao + (valorPrestacao * 0.03) + (valorPrestacao * 0.001 * diasAtraso) #calcula o valor a ser pago

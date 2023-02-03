@@ -3,6 +3,7 @@
 #líquido é calculado a partir do salário bruto, primeiro descontando 11%
 #referente ao INSS, e do resultado, descontando-se 15% de imposto de
 #renda.  
+#Aluno: Felipe Patriota
 
 def calculaSalario(salarioBruto): #função que calcula o salário líquido  
     salarioLiquido = salarioBruto - (salarioBruto * 0.11)  #desconta 11% do INSS
