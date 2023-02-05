@@ -1,11 +1,10 @@
 import pandas as pd
 from scipy import stats
-
+# importar os dados
 data2022 = pd.read_csv('licitacoes-2022.csv', sep=',',on_bad_lines='skip', low_memory=False)
-
 data2021 = pd.read_csv('licitacoes-2021.csv', sep=',',on_bad_lines='skip', low_memory=False)
 
-
+# Esse sample é uma amostra em que irei usar apenas os dados dos generos alimenticios
 sample1 = data2022[data2022['DESCRICAOOBJETO'] == 'GÊNEROS ALIMENTÍCIOS']['VALORESTIMADO'] 
 sample2 = data2021[data2021['DESCRICAOOBJETO'] == 'GÊNEROS ALIMENTÍCIOS']['VALORESTIMADO']
 sample1 = pd.to_numeric(sample1, errors='coerce')
