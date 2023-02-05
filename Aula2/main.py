@@ -15,7 +15,7 @@ print("5 - Render Poupanca")
 print("6 - Render Bonus")
 
 escolha = int(input("digite a opção desejada:")) 
-
+ 
 while escolha > 0: # enquanto a escolha for diferente de 0
 
     if escolha == 1:
