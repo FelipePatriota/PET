@@ -40,7 +40,21 @@ print("Valor média 2022 %s" % media2022)
 print('-------------------------')
 print("Valor média 2021 %s" % media2021)
 print('-------------------------')
-
+print("Valor mínimo 2022 %s" % minimo2022)
+print('-------------------------')
+print("Valor mínimo 2021 %s" % minimo2021)
+print('-------------------------')
+print("Valor máximo 2022 %s" % maximo2022)
+print('-------------------------')
+print("Valor máximo 2021 %s" % maximo2021)
+print('-------------------------')
+print("Valor variância 2022 %s" % variancia2022)
+print('-------------------------')
+print("Valor variância 2021 %s" % variancia2021)
+print('-------------------------')
+print("Valor desvio padrão 2022 %s" % desvio2022)
+print('-------------------------')
+print("Valor desvio padrão 2021 %s" % desvio2021)
 
 
 # # Perform t-test
