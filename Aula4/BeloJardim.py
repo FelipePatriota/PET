@@ -18,7 +18,7 @@ mediana2021 = sample2.median()
 media2022 = sample1.mean()
 media2021 = sample2.mean()
 # valor Minimo 
-minimo2021 = sample1.min()
+minimo2022 = sample1.min()
 minimo2021 = sample2.min()
 # valor Maximo
 maximo2022 = sample1.max()
