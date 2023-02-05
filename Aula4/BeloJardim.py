@@ -1,29 +1,60 @@
 import pandas as pd
 from scipy import stats
 
-# Read data from CSV file
-data2022 = pd.read_csv('licitacoes-2022.csv', sep=',',
-                       on_bad_lines='skip', low_memory=False)
+data2022 = pd.read_csv('licitacoes-2022.csv', sep=',',on_bad_lines='skip', low_memory=False)
 
-data2021 = pd.read_csv('licitacoes-2021.csv', sep=',',
-                       on_bad_lines='skip', low_memory=False)
+data2021 = pd.read_csv('licitacoes-2021.csv', sep=',',on_bad_lines='skip', low_memory=False)
 
-print(data2021)
-print(data2022)
 
-data2022.dropna(subset=['VALORESTIMADO'], inplace=True)
-data2021.dropna(subset=['VALORESTIMADO'], inplace=True)
+sample1 = data2022[data2022['DESCRICAOOBJETO'] == 'GÊNEROS ALIMENTÍCIOS']['VALORESTIMADO'] 
+sample2 = data2021[data2021['DESCRICAOOBJETO'] == 'GÊNEROS ALIMENTÍCIOS']['VALORESTIMADO']
+sample1 = pd.to_numeric(sample1, errors='coerce')
+sample2 = pd.to_numeric(sample2, errors='coerce')
 
-media2022 = data2022['VALORESTIMADO'].mean()
-media2021 = data2021['VALORESTIMADO'].mean()
+# teste de hipótese para médiana
+mediana2022 = sample1.median()
+mediana2021 = sample2.median()
+# teste de hipótese para média 
+media2022 = sample1.mean()
+media2021 = sample2.mean()
+# valor Minimo 
+minimo2021 = sample1.min()
+minimo2021 = sample2.min()
+# valor Maximo
+maximo2021 = sample1.max()
+maximo2021 = sample2.max()
+# teste de hipótese para variância
+variancia2022 = sample1.var()
+variancia2021 = sample2.var()
+# teste de hipótese para desvio padrão
+desvio2022 = sample1.std()
+desvio2021 = sample2.std()
 
-print(media2022)
-print(media2021)
 
-t_stat, p_value = stats.ttest_ind(
-    data2022['VALORESTIMADO'], data2021['VALORESTIMADO'], equal_var=False)
+# exibir o resultado
+print('Valor mediana 2022 %s' % mediana2022)
+print('-------------------------')
+print("Valor mediana 2021 %s" % mediana2021)
+print('-------------------------')
+print("Valor média 2022 %s" % media2022)
+print('-------------------------')
+print("Valor média 2021 %s" % media2021)
+print('-------------------------')
+
+
+
+# # Perform t-test
+t_stat, p_value = stats.ttest_ind(sample1, sample2, equal_var=False)
 
 # # Print results
 print("t-statistic:", t_stat)
 print("p-value:", p_value)
-# p-value de 0.05
+# p-value  0.005
+
+
+# Interpret results
+alpha = 0.05
+if p_value > alpha:
+    print("Fail to reject the null hypothesis")
+else:
+    print("Reject the null hypothesis")
