@@ -21,7 +21,7 @@ media2021 = sample2.mean()
 minimo2021 = sample1.min()
 minimo2021 = sample2.min()
 # valor Maximo
-maximo2021 = sample1.max()
+maximo2022 = sample1.max()
 maximo2021 = sample2.max()
 # teste de hipótese para variância
 variancia2022 = sample1.var()
